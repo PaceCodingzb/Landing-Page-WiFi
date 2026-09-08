@@ -56,3 +56,63 @@
 }
 
 
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li { list-style: none; }
+
+a { text-decoration: none; }
+
+a,
+img,
+span,
+input,
+button,
+ion-icon { display: block; }
+
+button {
+  font: inherit;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  font: inherit;
+  border: none;
+  width: 100%;
+}
+
+:focus { outline-offset: 4px; }
+
+html {
+  font-family: var(--ff-josefin);
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--dark-violet);
+  color: var(--white);
+}
+
+::-webkit-scrollbar { width: 10px; }
+
+::-webkit-scrollbar-track {
+  background: var(--dark-violet);
+  border-left: 1px solid var(--space-cadet);
+}
+
+::-webkit-scrollbar-thumb { background: hsla(0, 0%, 100%, 0.8); }
+
+::-webkit-scrollbar-thumb:hover { background: hsla(0, 0%, 100%, 0.6); }
+
+
+
+
