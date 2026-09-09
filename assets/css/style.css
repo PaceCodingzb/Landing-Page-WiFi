@@ -255,7 +255,7 @@ body {
   right: 20px;
   width: 40px;
   height: 40px;
-  background: var(--blue-ryb);
+  background: var(--color-magenta);
   color: var(--white);
   font-size: 25px;
   display: grid;
@@ -273,7 +273,9 @@ body {
   pointer-events: all;
 }
 
-.go-top:is(:hover, :focus) { --blue-ryb: hsl(221, 100%, 40%); }
+.go-top:is(:hover, :focus) {
+    --color-magenta: var(--color-gold);
+}
 
 
 
