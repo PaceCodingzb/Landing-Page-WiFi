@@ -26,7 +26,7 @@
 </head>
 <body>
 
-      <!-- 
+  <!-- 
     - #HEADER
   -->
 
@@ -88,6 +88,391 @@
 
     </div>
   </header>
+
+    <!-- Main Container -->
+    <main class="container main-content">
+        <div class="hero-grid">
+
+            <!-- Left Side: Hero Info -->
+            <div class="hero-info">
+                <div class="hero-badge">
+                    <span class="hero-badge-dot animate-ping"></span>
+                    <span class="hero-badge-gold">Wi-Fi Hotspot Ready</span>
+                    <span class="hero-badge-sep">|</span>
+                    <span>Kecepatan hingga 100 Mbps</span>
+                </div>
+
+                <h2 class="hero-title">
+                    Nikmati Akses Internet <br class="br-desktop">
+                    <span class="hero-title-gradient">
+                        Ultra Cepat &amp; Stabil
+                    </span>
+                </h2>
+
+                <p class="hero-desc">
+                    Selamat datang di jaringan hotspot <strong class="hero-desc-strong">Kas'Kado</strong>. Nikmati kebebasan berselancar, streaming HD tanpa buffering, dan game online lancar dengan harga voucher super hemat!
+                </p>
+
+                <!-- Features Highlights -->
+                <div class="hero-features">
+                    <div class="hero-feature-card">
+                        <i class="fa-solid fa-bolt hero-feature-icon icon-gold"></i>
+                        <p class="hero-feature-title">Super Cepat</p>
+                        <p class="hero-feature-sub">Fiber Optik</p>
+                    </div>
+                    <div class="hero-feature-card">
+                        <i class="fa-solid fa-shield-halved hero-feature-icon icon-accent"></i>
+                        <p class="hero-feature-title">Aman 100%</p>
+                        <p class="hero-feature-sub">Enkripsi Sesi</p>
+                    </div>
+                    <div class="hero-feature-card">
+                        <i class="fa-solid fa-headset hero-feature-icon icon-magenta"></i>
+                        <p class="hero-feature-title">Respon Cepat</p>
+                        <p class="hero-feature-sub">Bantuan 24/7</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: Captive Portal Card (Tabs + Forms) -->
+            <div class="portal-col">
+                <div class="glass-card portal-card">
+
+                    <!-- Decorative Top Glow Bar -->
+                    <div class="portal-card-topbar"></div>
+
+                    <!-- Tab Switcher Navigation -->
+                    <div class="tab-switcher">
+                        <button id="tab-login-btn" onclick="switchTab('login')" class="tab-btn tab-btn-active">
+                            <i class="fa-solid fa-right-to-bracket"></i>
+                            <span>Masuk / Login</span>
+                        </button>
+                        <button id="tab-status-btn" onclick="switchTab('status')" class="tab-btn tab-btn-inactive">
+                            <i class="fa-solid fa-wifi"></i>
+                            <span>Status Sesi</span>
+                            <span id="status-dot" class="status-dot hidden animate-ping"></span>
+                        </button>
+                    </div>
+
+                    <!-- TAB 1: FORM LOGIN -->
+                    <div id="tab-login-content" class="tab-content">
+                        <div class="form-header">
+                            <h3 class="form-title">Login Hotspot</h3>
+                            <p class="form-subtitle">Masukkan Kode Voucher / Username &amp; Password Anda</p>
+                        </div>
+
+                        <!-- Login Form -->
+                        <form id="loginForm" onsubmit="handleLogin(event)" class="login-form">
+                            <!-- Username Field -->
+                            <div>
+                                <label class="field-label">Username / Kode Voucher</label>
+                                <div class="field-wrap">
+                                    <div class="field-icon">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <input type="text" id="username" required placeholder="Contoh: KASKADO123" class="field-input">
+                                </div>
+                            </div>
+
+                            <!-- Password Field -->
+                            <div>
+                                <label class="field-label">Password</label>
+                                <div class="field-wrap">
+                                    <div class="field-icon">
+                                        <i class="fa-solid fa-lock"></i>
+                                    </div>
+                                    <input type="password" id="password" required placeholder="••••••••" class="field-input field-input-password">
+                                    <button type="button" onclick="togglePasswordVisibility()" class="field-toggle">
+                                        <i id="pass-icon" class="fa-solid fa-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Remember Me Option -->
+                            <div class="form-row-between">
+                                <label class="remember-label">
+                                    <input type="checkbox" id="remember" class="remember-checkbox">
+                                    <span>Ingat Akun Saya</span>
+                                </label>
+                                <a href="javascript:void(0)" onclick="openCSModal('Lupa Password')" class="forgot-link">Lupa Voucher?</a>
+                            </div>
+
+                            <!-- Submit Button -->
+                            <button type="submit" id="btn-login" class="btn-login glow-button">
+                                <span>Hubungkan Sekarang</span>
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </form>
+
+                        <div class="divider">
+                            <div class="divider-line"></div>
+                            <span class="divider-label">Belum punya voucher?</span>
+                        </div>
+
+                        <!-- Buy Voucher CTA -->
+                        <button onclick="scrollToPaket()" class="btn-buy-voucher">
+                            <i class="fa-solid fa-cart-shopping icon-gold"></i>
+                            <span>Beli Voucher Online / Kasir</span>
+                        </button>
+                    </div>
+
+                    <!-- TAB 2: STATUS LOGIN / DASHBOARD SESI -->
+                    <div id="tab-status-content" class="tab-content hidden">
+
+                        <!-- Dynamic Connection Status Header -->
+                        <div id="connection-status-box" class="status-box">
+                            <div class="status-box-left">
+                                <div class="status-box-icon">
+                                    <i class="fa-solid fa-wifi animate-pulse"></i>
+                                </div>
+                                <div>
+                                    <h4 class="status-box-label">Status Terhubung</h4>
+                                    <p id="active-user-display" class="status-box-user">KASKADO-GUEST</p>
+                                </div>
+                            </div>
+                            <span class="status-box-badge">ONLINE</span>
+                        </div>
+
+                        <!-- Live Metrics Grid -->
+                        <div class="metrics-grid">
+                            <div class="glass-card-sm metric-card">
+                                <p class="metric-label">Sisa Waktu</p>
+                                <p id="timer-display" class="metric-value metric-gold">23:59:45</p>
+                            </div>
+                            <div class="glass-card-sm metric-card">
+                                <p class="metric-label">Total Data Terpakai</p>
+                                <p id="data-used-display" class="metric-value metric-accent">142.5 MB</p>
+                            </div>
+                        </div>
+
+                        <!-- Connection Details -->
+                        <div class="glass-card-sm details-card">
+                            <div class="details-row">
+                                <span class="details-label"><i class="fa-solid fa-network-wired details-icon"></i> Alamat IP:</span>
+                                <span id="ip-address-display" class="details-value">192.168.88.154</span>
+                            </div>
+                            <div class="details-row">
+                                <span class="details-label"><i class="fa-solid fa-laptop details-icon"></i> MAC Address:</span>
+                                <span id="mac-address-display" class="details-value">A4:C3:F0:12:88:99</span>
+                            </div>
+                            <div class="details-row">
+                                <span class="details-label"><i class="fa-solid fa-clock details-icon"></i> Terhubung Sejak:</span>
+                                <span id="connected-time-display" class="details-value">Hari Ini, 08:30</span>
+                            </div>
+                        </div>
+
+                        <!-- Realtime Speed Meter Simulation -->
+                        <div class="glass-card-sm speed-card">
+                            <div class="speed-header">
+                                <span class="speed-header-label"><i class="fa-solid fa-gauge-high speed-header-icon"></i> Kecepatan Sesi</span>
+                                <span class="speed-live">Live Sync</span>
+                            </div>
+
+                            <!-- Speed indicators -->
+                            <div class="speed-grid">
+                                <div class="speed-box">
+                                    <span class="speed-box-label"><i class="fa-solid fa-arrow-down speed-down"></i> Download</span>
+                                    <span id="speed-dl" class="speed-box-value">18.4 Mbps</span>
+                                </div>
+                                <div class="speed-box">
+                                    <span class="speed-box-label"><i class="fa-solid fa-arrow-up speed-up"></i> Upload</span>
+                                    <span id="speed-ul" class="speed-box-value">5.2 Mbps</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Disconnect Action Button -->
+                        <button onclick="handleLogout()" class="btn-logout">
+                            <i class="fa-solid fa-power-off"></i>
+                            <span>Putuskan Koneksi / Logout</span>
+                        </button>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+        <!-- SECTION 2: PAKET VOUCHER INTERNET -->
+    <section id="paket" class="paket-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="section-eyebrow">Pilihan Terjangkau</span>
+                <h3 class="section-title">Paket Hotspot Kas'Kado</h3>
+                <p class="section-desc">Pilih paket voucher internet yang sesuai dengan kebutuhan aktivitas harianmu.</p>
+            </div>
+
+            <div class="paket-grid">
+
+                <!-- Paket 1: Harian -->
+                <div class="glass-card-sm paket-card">
+                    <div>
+                        <div class="paket-card-top">
+                            <div>
+                                <span class="paket-badge paket-badge-muted">Hemat</span>
+                                <h4 class="paket-name">Paket Harian</h4>
+                            </div>
+                            <i class="fa-solid fa-bolt-lightning paket-icon icon-gold"></i>
+                        </div>
+                        <div class="paket-price">
+                            <span class="paket-price-amount">Rp 3.000</span>
+                            <span class="paket-price-unit">/ 24 Jam</span>
+                        </div>
+                        <ul class="paket-features">
+                            <li><i class="fa-solid fa-check paket-check"></i> Kuota Unlimted (FUP Fair)</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Speed Up to 10 Mbps</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> 1 Perangkat Aktif</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Masa Aktif 24 Jam</li>
+                        </ul>
+                    </div>
+                    <button onclick="orderVoucher('Paket Harian (Rp 3.000)')" class="btn-paket btn-paket-muted">
+                        Beli Voucher Harian
+                    </button>
+                </div>
+
+                <!-- Paket 2: Mingguan (POPULAR) -->
+                <div class="glass-card paket-card paket-card-popular">
+                    <div class="paket-popular-badge">
+                        Paling Populer
+                    </div>
+                    <div>
+                        <div class="paket-card-top paket-card-top-popular">
+                            <div>
+                                <span class="paket-badge paket-badge-popular">Favorit</span>
+                                <h4 class="paket-name">Paket Mingguan</h4>
+                            </div>
+                            <i class="fa-solid fa-fire paket-icon icon-pink"></i>
+                        </div>
+                        <div class="paket-price">
+                            <span class="paket-price-amount">Rp 15.000</span>
+                            <span class="paket-price-unit">/ 7 Hari</span>
+                        </div>
+                        <ul class="paket-features">
+                            <li><i class="fa-solid fa-check paket-check"></i> Full Speed Unlimted</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Speed Up to 20 Mbps</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Bebas Game &amp; Streaming HD</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Masa Aktif 7 Hari Full</li>
+                        </ul>
+                    </div>
+                    <button onclick="orderVoucher('Paket Mingguan (Rp 15.000)')" class="btn-paket btn-paket-popular glow-button">
+                        Beli Voucher Mingguan
+                    </button>
+                </div>
+
+                <!-- Paket 3: Bulanan -->
+                <div class="glass-card-sm paket-card">
+                    <div>
+                        <div class="paket-card-top">
+                            <div>
+                                <span class="paket-badge paket-badge-muted">Super Puas</span>
+                                <h4 class="paket-name">Paket Bulanan</h4>
+                            </div>
+                            <i class="fa-solid fa-crown paket-icon icon-gold"></i>
+                        </div>
+                        <div class="paket-price">
+                            <span class="paket-price-amount">Rp 50.000</span>
+                            <span class="paket-price-unit">/ 30 Hari</span>
+                        </div>
+                        <ul class="paket-features">
+                            <li><i class="fa-solid fa-check paket-check"></i> Prioritas Bandwidth Prioritas</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Speed Up to 50 Mbps</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Bebas Akses Tanpa Batas</li>
+                            <li><i class="fa-solid fa-check paket-check"></i> Garansi Bantuan Prioritas</li>
+                        </ul>
+                    </div>
+                    <button onclick="orderVoucher('Paket Bulanan (Rp 50.000)')" class="btn-paket btn-paket-muted">
+                        Beli Voucher Bulanan
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: KEUNGGULAN KAS'KADO -->
+    <section class="keunggulan-section">
+        <div class="container">
+            <div class="section-heading section-heading-sm">
+                <h3 class="section-title-sm">Mengapa Memilih Kas'Kado?</h3>
+                <p class="section-desc-sm">Pengalaman jaringan Wi-Fi premium tanpa ribet.</p>
+            </div>
+
+            <div class="keunggulan-grid">
+                <div class="glass-card-sm keunggulan-card">
+                    <div class="keunggulan-icon-wrap keunggulan-icon-purple">
+                        <i class="fa-solid fa-tachograph-digital"></i>
+                    </div>
+                    <h4 class="keunggulan-title">Koneksi Stabil</h4>
+                    <p class="keunggulan-desc">Didukung jaringan Fiber Optik berkecepatan tinggi tanpa kompromi.</p>
+                </div>
+
+                <div class="glass-card-sm keunggulan-card">
+                    <div class="keunggulan-icon-wrap keunggulan-icon-accent">
+                        <i class="fa-solid fa-qrcode"></i>
+                    </div>
+                    <h4 class="keunggulan-title">Login Praktis</h4>
+                    <p class="keunggulan-desc">Satu klik login via browser tanpa perlu instal aplikasi tambahan.</p>
+                </div>
+
+                <div class="glass-card-sm keunggulan-card">
+                    <div class="keunggulan-icon-wrap keunggulan-icon-gold">
+                        <i class="fa-solid fa-wallet"></i>
+                    </div>
+                    <h4 class="keunggulan-title">Harga Bersahabat</h4>
+                    <p class="keunggulan-desc">Pilihan paket fleksibel mulai dari Rp 3.000 sesuai kantong mahasiswa &amp; umum.</p>
+                </div>
+
+                <div class="glass-card-sm keunggulan-card">
+                    <div class="keunggulan-icon-wrap keunggulan-icon-emerald">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+                    <h4 class="keunggulan-title">Bantuan 24/7</h4>
+                    <p class="keunggulan-desc">Tim Customer Support siap membantu keluhan koneksi Anda kapan saja.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-brand">
+                <i class="fa-solid fa-gift icon-magenta"></i>
+                <span class="footer-brand-name">Kas'Kado Wi-Fi</span>
+                <span>&copy; 2026. All rights reserved.</span>
+            </div>
+
+            <div class="footer-links">
+                <a href="javascript:void(0)" onclick="openCSModal('Syarat & Ketentuan')">Syarat &amp; Ketentuan</a>
+                <a href="javascript:void(0)" onclick="openCSModal('Panduan Penggunaan')">Panduan</a>
+                <a href="javascript:void(0)" onclick="openCSModal('Bantuan CS')">Hubungi CS</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODAL CUSTOMER SERVICE / ORDER WA -->
+    <div id="csModal" class="modal-backdrop hidden">
+        <div class="glass-card modal-card">
+            <button onclick="closeCSModal()" class="modal-close">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-body">
+                <div class="modal-icon">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </div>
+                <h3 id="modal-title" class="modal-title">Hubungi Customer Service</h3>
+                <p id="modal-desc" class="modal-desc">
+                    Butuh bantuan atau ingin membeli kode voucher? Silakan hubungi admin Kas'Kado melalui WhatsApp.
+                </p>
+                <div class="modal-cta-wrap">
+                    <a id="wa-link-btn" href="https://wa.me/6281234567890?text=Halo%20Admin%20Kas'Kado,%20saya%20butuh%20bantuan%20voucher%20Wi-Fi" target="_blank" class="modal-cta">
+                        <i class="fa-brands fa-whatsapp"></i>
+                        <span>Lanjut ke WhatsApp Admin</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
 
