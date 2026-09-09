@@ -28,10 +28,11 @@ for (let i = 0; i < navElemArr.length; i++) {
 }
 
 /**
- * header sticky
+ * header sticky & go-to-top button
  */
 
 const header = document.querySelector("[data-header]");
+const goTopBtn = document.querySelector("[data-go-top]");
 
 let lastScrollPosition = 0;
 
@@ -47,7 +48,20 @@ window.addEventListener("scroll", function () {
 
   lastScrollPosition = scrollPosition <= 0 ? 0 : scrollPosition;
 
+  // tampilkan tombol go-to-top setelah scroll melewati 300px
+  if (goTopBtn) {
+    if (scrollPosition > 300) {
+      goTopBtn.classList.add("active");
+    } else {
+      goTopBtn.classList.remove("active");
+    }
+  }
+
 });
+
+if (goTopBtn) {
+  goTopBtn.addEventListener("click", scrollToTop);
+}
 
 
 // State Variables
@@ -177,9 +191,9 @@ function openCSModal(context = 'Bantuan CS') {
     const waBtn = document.getElementById('wa-link-btn');
 
     title.innerText = context;
-    desc.innerText = `Layanan bantuan cepat Kas'Kado Wi-Fi. Klik tombol di bawah untuk langsung terhubung ke CS via WhatsApp.`;
+    desc.innerText = `Layanan bantuan cepat KasKode Wi-Fi. Klik tombol di bawah untuk langsung terhubung ke CS via WhatsApp.`;
 
-    const encodedMsg = encodeURIComponent(`Halo Admin Kas'Kado, saya butuh informasi/bantuan terkait: ${context}`);
+    const encodedMsg = encodeURIComponent(`Halo Admin KasKode, saya butuh informasi/bantuan terkait: ${context}`);
     waBtn.href = `https://wa.me/6281234567890?text=${encodedMsg}`;
 
     modal.classList.remove('hidden');
@@ -194,7 +208,7 @@ function orderVoucher(paketName) {
     title.innerText = `Pemesanan Voucher`;
     desc.innerText = `Anda memilih: ${paketName}. Lanjutkan ke WhatsApp untuk mendapatkan kode voucher secara instan.`;
 
-    const encodedMsg = encodeURIComponent(`Halo Admin Kas'Kado, saya ingin membeli kode voucher: ${paketName}`);
+    const encodedMsg = encodeURIComponent(`Halo Admin KasKode, saya ingin membeli kode voucher: ${paketName}`);
     waBtn.href = `https://wa.me/6281234567890?text=${encodedMsg}`;
 
     modal.classList.remove('hidden');
