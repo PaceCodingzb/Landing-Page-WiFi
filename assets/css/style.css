@@ -1039,11 +1039,32 @@ header .container {
     justify-content: space-between;
     gap: 1rem;
 }
-.footer-brand { display: flex; align-items: center; gap: 0.5rem; }
-.footer-brand-name { font-family: 'Outfit', var(--ff-josefin); font-weight: 700; color: #fff; font-size: 0.875rem; }
-.footer-links { display: flex; align-items: center; gap: 1.5rem; color: var(--gray-400); }
-.footer-links a { transition: color 0.2s ease; }
-.footer-links a:hover { color: #fff; }
+.footer-brand { 
+  display: flex; 
+  align-items: center; 
+  gap: 0.5rem;
+}
+
+.footer-brand-name { 
+  font-family: 'Outfit', var(--ff-josefin); 
+  font-weight: 700; 
+  color: #fff; 
+  font-size: 0.875rem;
+ }
+
+.footer-links { 
+  display: flex; 
+  align-items: center; 
+  gap: 1.5rem; 
+}
+.footer-links a { 
+  transition: color 0.2s ease;
+  color: var(--white);
+ }
+
+.footer-links a:hover { 
+  color: var(--color-gold);  
+}
 
 
 
