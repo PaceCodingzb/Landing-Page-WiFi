@@ -1199,6 +1199,32 @@ header .container {
 
 @media (min-width: 768px) {
 
+    /**
+   * HERO
+   */
+
+  .hero-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.5rem; }
+
+  .hero-info { grid-column: span 7 / span 7; text-align: left; }
+
+  .hero-badge { margin: 0; }
+
+  .hero-title { font-size: 3.25rem; }
+
+  .hero-desc { margin: 0; }
+
+  .hero-features { margin: 0; }
+
+
+  /**
+   * PORTAL CARD
+   */
+
+  .portal-col { grid-column: span 5 / span 5; }
+
+
+
+
   /**
    * PAKET VOUCHER
    */
@@ -1207,6 +1233,12 @@ header .container {
 
   .paket-card-popular { margin: 0; }
 
+
+    /**
+   * KEUNGGULAN
+   */
+
+  .keunggulan-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2rem; }
 
 
   /**
