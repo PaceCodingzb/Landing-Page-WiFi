@@ -304,8 +304,20 @@ header .container {
   align-items: center;
 }
 
-.logo { width: max-content; }
+.logo {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .logo img { height: 34px; width: auto; }
+.logo-text {
+  font-family: 'Outfit', var(--ff-josefin);
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--white);
+}
 
 .nav-toggle-btn {
   color: var(--white);
