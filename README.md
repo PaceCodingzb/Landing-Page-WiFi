@@ -1,6 +1,6 @@
-<div align="center">
-KasKode - Wi-Fi Hotspot Voucher Page
+<h2 align="center">Wi-Fi Hotspot - KasKode</h2>
 
-➜ Live Demo
+Nikmati Akses Internet <br />Ultra Cepat &amp; Stabil.
 
-</div>
+<a href="https://github.com/PaceCodingzb/Landing-Page-WiFi/"><strong>➥ Live Demo</strong></a>
+
