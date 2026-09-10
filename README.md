@@ -3,6 +3,6 @@
 
 Nikmati Akses Internet <br /> Ultra Cepat &amp; Stabil.
 
-<a href="https://github.com/PaceCodingzb/Landing-Page-WiFi/"><strong>➥ Live Demo</strong></a>
+<a href="https://pacecodingzb.github.io/Landing-Page-WiFi/"><strong>➥ Live Demo</strong></a>
 
 </div>
