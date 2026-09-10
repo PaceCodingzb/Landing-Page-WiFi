@@ -1,4 +1,2 @@
-1. Mobile 640 kebawah aman
-2. Responsive untuk semua atur ulang kecuali Mobile (640 kebawah)
-3. Header tampilkan menu setelah 769 keatas
-4. Footer atur ulang lebih bagus
+1. Header tampilkan menu setelah 769 keatas
+2. Footer atur ulang lebih bagus
