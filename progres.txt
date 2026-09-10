@@ -1,2 +1,1 @@
-1. Header tampilkan menu setelah 769 keatas
-2. Footer atur ulang lebih bagus
+1. Footer atur ulang lebih bagus
