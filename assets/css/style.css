@@ -23,6 +23,7 @@
   --dark-violet: hsl(252, 100%, 12%);
   --space-cadet: hsl(247, 43%, 20%);
   --blue-ryb: hsl(221, 100%, 50%);
+  --background123: rgba(16, 185, 129, 0.2);
   --white: hsl(0, 0%, 100%);
 
   --gradient: linear-gradient(to right, var(--flourescent-blue), var(--blue-ryb));
@@ -1257,12 +1258,12 @@ header .container {
   .navbar-actions { gap: 10px; }
  
   .navbar-actions .btn {
-    background: var(--blue-ryb);
+    background: #059669;
     padding: 15px 25px;
     transition: background var(--transition);
   }
  
-  .navbar-actions .btn:is(:hover, :focus) { background: hsl(221, 100%, 40%); }
+  .navbar-actions .btn:is(:hover, :focus) { background: hsl(145, 97%, 40%); }
  
   .navbar::before,
   .overlay { display: none; }
