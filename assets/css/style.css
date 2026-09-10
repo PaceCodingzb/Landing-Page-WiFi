@@ -1199,6 +1199,74 @@ header .container {
 
 @media (min-width: 768px) {
 
+   /**
+   * HEADER
+   */
+ 
+  header { top: -120px; }
+ 
+  .nav-toggle-btn { display: none; }
+ 
+  .navbar {
+    position: static;
+    visibility: visible;
+    box-shadow: none;
+    padding: 0;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 30px;
+  }
+ 
+  .navbar-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+ 
+  .navbar-link { position: relative; }
+ 
+  .navbar-link::after {
+    --scale: 0;
+ 
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%) scale(var(--scale));
+    transform-origin: left;
+    width: calc(100% - 20px);
+    height: 2px;
+    background: var(--gradient);
+    transition: var(--transition);
+  }
+ 
+  .navbar-link:is(:hover, :focus) {
+    background: var(--gradient);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
+ 
+  .navbar-link:is(:hover, :focus)::after { --scale: 1; }
+ 
+  .navbar-actions { gap: 10px; }
+ 
+  .navbar-actions .btn {
+    background: var(--blue-ryb);
+    padding: 15px 25px;
+    transition: background var(--transition);
+  }
+ 
+  .navbar-actions .btn:is(:hover, :focus) { background: hsl(221, 100%, 40%); }
+ 
+  .navbar::before,
+  .overlay { display: none; }
+ 
     /**
    * HERO
    */
@@ -1259,7 +1327,7 @@ header .container {
 
 @media (min-width: 1024px) {
 
-  /**
+   /**
    * HERO
    */
 
