@@ -191,9 +191,9 @@ function openCSModal(context = 'Bantuan CS') {
     const waBtn = document.getElementById('wa-link-btn');
 
     title.innerText = context;
-    desc.innerText = `Layanan bantuan cepat KasKode Wi-Fi. Klik tombol di bawah untuk langsung terhubung ke CS via WhatsApp.`;
+    desc.innerText = `Layanan bantuan cepat Kas'Kode Wi-Fi. Klik tombol di bawah untuk langsung terhubung ke CS via WhatsApp.`;
 
-    const encodedMsg = encodeURIComponent(`Halo Admin KasKode, saya butuh informasi/bantuan terkait: ${context}`);
+    const encodedMsg = encodeURIComponent(`Halo Admin Kas'Kode, saya butuh informasi/bantuan terkait: ${context}`);
     waBtn.href = `https://wa.me/6281234567890?text=${encodedMsg}`;
 
     modal.classList.remove('hidden');
@@ -208,7 +208,7 @@ function orderVoucher(paketName) {
     title.innerText = `Pemesanan Voucher`;
     desc.innerText = `Anda memilih: ${paketName}. Lanjutkan ke WhatsApp untuk mendapatkan kode voucher secara instan.`;
 
-    const encodedMsg = encodeURIComponent(`Halo Admin KasKode, saya ingin membeli kode voucher: ${paketName}`);
+    const encodedMsg = encodeURIComponent(`Halo Admin Kas'Kode, saya ingin membeli kode voucher: ${paketName}`);
     waBtn.href = `https://wa.me/6281234567890?text=${encodedMsg}`;
 
     modal.classList.remove('hidden');
@@ -223,5 +223,14 @@ function scrollToPaket() {
 }
 
 function scrollToTop() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+
+   if (header) {
+    header.classList.remove("active");
+  }
+
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
 }
+
