@@ -303,11 +303,9 @@ header {
   padding-block: 15px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
   background: rgba(255, 255, 255, 0.95); 
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(226, 142, 24, 0.15);
-   transition: var(--transition);
-  z-index: 99;
+  transition: var(--transition);
+  z-index: 4;
+  will-change: top;
 }
 
 header.active { top: 0; }
@@ -344,21 +342,20 @@ header .container {
 
 .navbar {
   position: fixed;
-  bottom: 0;
+  bottom: -270px;
   left: 0;
   width: 100%;
   background: var(--color-card); 
-  border-radius: 20px 20px 0 0;
-  padding: 30px 20px 20px;
-  box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
-  z-index: 100;
-  transform: translateY(100%);
+  border-radius: 8px 8px 0 0;
+  padding: 30px 10px 10px;
+  box-shadow: 0 -1px 15px rgba(0, 0, 0, 0.15);
+  z-index: 2;
   visibility: hidden;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.3s;
+  transition: 0.15s ease-in;
 }
 
 .navbar.active {
-  transform: translateY(0);
+  bottom: 0;
   visibility: visible;
   transition: 0.25s ease-out;
 }
@@ -385,7 +382,7 @@ header .container {
   color: var(--color-dark); 
   font-size: var(--fs-4);
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 4px;
   font-weight: 500;
 }
 
@@ -404,7 +401,14 @@ header .container {
   color: var(--color-dark); 
   font-size: 25px;
   padding: 5px;
-  border-radius: 6px;
+  border-radius: 4px;
+}
+
+.btn {
+  color: var(--color-dark); 
+  font-size: var(--fs-4);
+  padding: 5px;
+  border-radius: 4px;
 }
 
 .navbar-btn:is(:hover, :focus),
@@ -1489,6 +1493,7 @@ header .container {
  
   .navbar-actions .btn:is(:hover, :focus) { 
     background: var(--color-gold-hover); 
+    color: var(--white);
     box-shadow: 0 6px 18px rgba(203, 123, 15, 0.4);
   }
  
