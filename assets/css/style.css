@@ -126,6 +126,7 @@ input {
 html {
   font-family: var(--ff-josefin);
   scroll-behavior: smooth;
+  scroll-padding-top: 90px;
 }
 
 body {
@@ -255,6 +256,9 @@ body {
 .icon-accent { color: var(--color-accent); }
 .icon-magenta { color: var(--color-gold); } 
 .icon-pink { color: var(--color-gold-hover); }
+
+
+
 
 /*-----------------------------------*\
   #GO TO TOP
@@ -1350,7 +1354,6 @@ header .container {
 
 
 
-
 /*-----------------------------------*\
   #RESPONSIVE
 \*-----------------------------------*/
@@ -1364,6 +1367,10 @@ header .container {
   /**
    * HERO
    */
+
+   html {
+    scroll-padding-top: 120px;
+  }
 
   .main-content { padding-top: 7.5rem; padding-bottom: 3rem; }
 
@@ -1428,6 +1435,10 @@ header .container {
    /**
    * HEADER
    */
+
+  html {
+    scroll-padding-top: 130px;
+  }
  
   header { top: -120px; }
  
@@ -1563,6 +1574,10 @@ header .container {
    /**
    * HERO
    */
+
+   html {
+    scroll-padding-top: 140px;
+  }
 
   .hero-grid { grid-template-columns: repeat(12, minmax(0, 1fr)); }
 
