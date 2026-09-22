@@ -20,36 +20,36 @@
   /**
    * Primary & Brand Colors (Warna Utama & Aksen Warm Gold/Orange)
    */
-  --color-gold: #e28e18;          /* Warna oranye/emas tombol & teks aksen "Ultra Cepat" */
-  --color-gold-hover: #cb7b0f;    /* Warna hover tombol oranye */
-  --color-gold-light: #fef3c7;    /* Warna latar belakang badge emas & ikon */
-  --color-gold-border: #fcd34d;   /* Warna garis tepi elemen emas */
+  --color-gold: #e28e18;          
+  --color-gold-hover: #cb7b0f;    
+  --color-gold-light: #fef3c7;    
+  --color-gold-border: #fcd34d;   
 
   /**
    * Text Colors (Warna Teks & Tipografi)
    */
-  --color-dark: #1f1915;          /* Warna teks judul utama / hampir hitam */
-  --gray-500: #6b635b;           /* Warna teks deskripsi & sub-judul */
-  --gray-400: #9c9389;           /* Warna teks sekunder / placeholder input */
-  --gray-300: #d6cfc7;           /* Warna garis pembatas / divider line */
+  --color-dark: #1f1915;          
+  --gray-500: #6b635b;          
+  --gray-400: #9c9389;         
+  --gray-300: #d6cfc7;          
 
   /**
    * Background Colors (Warna Latar Belakang Kartu & Halaman)
    */
-  --background123: #fcf9f2;       /* Warna latar utama halaman (Warm Cream) */
-  --color-card: #ffffff;          /* Warna kartu utama (Putih Bersih) */
-  --card-bg-warm: #f9f5eb;        /* Warna kartu sekunder (Krem Muda) */
+  --background123: #fcf9f2;       
+  --color-card: #ffffff;         
+  --card-bg-warm: #f9f5eb;       
   --white: #ffffff;
 
   /**
    * Purple & Magenta Replacement (Disesuaikan ke Gradasi Warm/Gold)
    */
-  --purple-200: #fef9c3;          /* Diganti ke krem terang */
-  --purple-300: #fde047;          /* Diganti ke kuning lembut */
-  --purple-400: #e28e18;          /* Diganti ke oranye emas */
-  --color-purple: #92400e;        /* Diganti ke cokelat hangat */
-  --color-magenta: #e28e18;       /* Diganti ke aksen oranye */
-  --color-pink: #f97316;          /* Diganti ke aksen oranye terang */
+  --purple-200: #fef9c3;         
+  --purple-300: #fde047;          
+  --purple-400: #e28e18;          
+  --color-purple: #92400e;        
+  --color-magenta: #e28e18;       
+  --color-pink: #f97316;          
 
   /**
    * Gradients & UI Utilities
