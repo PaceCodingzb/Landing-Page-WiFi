@@ -329,11 +329,30 @@ header .container {
 
 .logo img { height: 34px; width: auto; }
 
+/* Wrapper untuk menumpuk nama dan slogan secara vertikal */
+.logo-text-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  line-height: 1;
+}
+
 .logo-text {
   font-family: 'Outfit', var(--ff-josefin);
   font-weight: 700;
   font-size: 20px;
-  color: var(--color-dark); 
+  color: var(--color-gold-hover); 
+  letter-spacing: -0.5px;
+}
+
+.logo-slogan {
+  font-family: 'Outfit', var(--ff-josefin);
+  font-size: 6px;
+  font-weight: 700;
+  color: var(--color-gold-hover);
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  margin-top: 2px;
 }
 
 .nav-toggle-btn {
