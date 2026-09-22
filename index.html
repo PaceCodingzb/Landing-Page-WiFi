@@ -51,9 +51,6 @@
                 <li class="navbar-item">
                     <a href="#keunggulan" class="navbar-link">Keunggulan</a>
                 </li>
-                <li class="navbar-item">
-                    <a href="#panduan" class="navbar-link">Cara Pakai</a>
-                </li>
             </ul>
 
             <!-- NAVBAR ACTIONS -->
@@ -63,10 +60,10 @@
                     <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
                 </button>
 
-                <!-- Tombol Login Voucher (Icon Only) -->
-                <button class="navbar-btn" id="login-voucher-btn" aria-label="Masuk Voucher" onclick="openLoginModal()" title="Masuk Voucher">
-                    <ion-icon name="key-outline"></ion-icon>
-                </button>
+                <!-- Panduan -->
+                <a href="assets/images/panduan-wifi.pdf" target="_blank" class="navbar-btn" id="pdf-panduan-btn" aria-label="Lihat Panduan PDF" title="Lihat Panduan PDF">
+                    <ion-icon name="document-text-outline"></ion-icon>
+                </a>
 
                 <!-- Tombol Bantuan CS WhatsApp -->
                 <button class="btn btn-primary" onclick="openCSModal('Bantuan CS')">
@@ -444,72 +441,6 @@
         </div>
     </div>
 
-    <!-- MODAL PANDUAN CARA PAKAI & BELI VOUCHER -->
-    <div class="modal-backdrop hidden" id="panduanModal">
-        <div class="modal-content">
-            <div class="modal-header">
-                <div class="modal-title-group">
-                    <div class="modal-header-icon">
-                        <ion-icon name="book-outline"></ion-icon>
-                    </div>
-                    <h3>Cara Beli & Pakai Voucher</h3>
-                </div>
-                <button class="modal-close-btn" onclick="closePanduanModal()" aria-label="Tutup Modal">
-                    <ion-icon name="close-outline"></ion-icon>
-                </button>
-            </div>
-
-            <div class="modal-body">
-                <p class="modal-desc">Ikuti langkah mudah berikut untuk membeli dan menggunakan voucher Wi-Fi Kas'Kode:</p>
-                
-                <div class="panduan-steps">
-                    <!-- Langkah 1 -->
-                    <div class="step-card">
-                        <div class="step-num">1</div>
-                        <div class="step-info">
-                            <h4>Pilih Paket & Beli Voucher</h4>
-                            <p>Pilih paket internet sesuai kebutuhan Anda di menu <strong>Paket Voucher</strong>, lalu klik tombol <strong>Beli Paket</strong> untuk terhubung ke CS via WhatsApp.</p>
-                        </div>
-                    </div>
-
-                    <!-- Langkah 2 -->
-                    <div class="step-card">
-                        <div class="step-num">2</div>
-                        <div class="step-info">
-                            <h4>Hubungkan ke Wi-Fi Kas'Kode</h4>
-                            <p>Nyalakan Wi-Fi di HP/Laptop Anda, cari dan hubungkan ke SSID/Nama Jaringan <strong>Kas'Kode_Hotspot</strong>.</p>
-                        </div>
-                    </div>
-
-                    <!-- Langkah 3 -->
-                    <div class="step-card">
-                        <div class="step-num">3</div>
-                        <div class="step-info">
-                            <h4>Buka Portal Login & Masukkan Kode</h4>
-                            <p>Halaman login akan muncul otomatis (atau buka browser & ketik <strong>kaskode.net</strong>). Masukkan Kode Voucher yang Anda terima di kolom yang tersedia.</p>
-                        </div>
-                    </div>
-
-                    <!-- Langkah 4 -->
-                    <div class="step-card">
-                        <div class="step-num">4</div>
-                        <div class="step-info">
-                            <h4>Klik Connect & Nikmati Internet</h4>
-                            <p>Klik tombol <strong>Hubungkan / Login</strong>. Selamat! Anda sudah siap berselancar di internet.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" onclick="closePanduanModal()">Tutup</button>
-                <button type="button" class="btn btn-primary" onclick="closePanduanModal(); scrollToPaket();">
-                    <span>Pilih Paket Sekarang</span>
-                    <ion-icon name="arrow-forward-outline"></ion-icon>
-                </button>
-            </div>
-        </div>
-    </div>
 
      <!-- 
     - #GO TO TOP
