@@ -6,7 +6,7 @@
     <title>Wi-Fi Hotspot - Kas'Kode</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="./assets/images/lg1.png" type="image/svg+xml">
+    <link rel="shortcut icon" href="./assets/images/ikon.png" type="image/svg+xml">
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="./assets/css/style.css">
@@ -22,59 +22,62 @@
 <body id="top">   
 
     <!-- HEADER & NAVBAR -->
-    <header class="active" data-header>
-        <div class="container">
+<header class="active" data-header>
+    <div class="container">
 
-            <div class="overlay" data-overlay></div>
+        <div class="overlay" data-overlay></div>
 
-            <a href="#top" class="logo">
-                <img src="./assets/images/lg1.png" alt="Kas'Kode Logo">
-                <div class="logo-text-wrapper">
-                    <span class="logo-text">Kas'Kode</span>
-                    <span class="logo-slogan">INTERNET UNTUK SEMUA</span>
-                </div>
-            </a>
+        <!-- LOGO -->
+        <a href="#top" class="logo">
+            <img src="./assets/images/logo.png" alt="Kas'Kode Logo">
+            <div class="logo-text-wrapper">
+            </div>
+        </a>
 
-            <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
-                <ion-icon name="menu-outline"></ion-icon>
-            </button>
+        <!-- HAMBURGER MENU (MOBILE) -->
+        <button class="nav-toggle-btn" data-nav-toggle-btn aria-label="Toggle Menu">
+            <ion-icon name="menu-outline"></ion-icon>
+        </button>
 
-            <nav class="navbar" data-navbar>
-                <ul class="navbar-list">
-                    <li class="navbar-item">
-                        <a href="#top" class="navbar-link">Home</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="#paket" class="navbar-link">Paket Internet</a>
-                    </li>
-                    <li class="navbar-item">
-                        <a href="#keunggulan" class="navbar-link">Keunggulan</a>
-                    </li>
-                </ul>
+        <!-- NAVIGATION MENU -->
+        <nav class="navbar" data-navbar>
+            <ul class="navbar-list">
+                <li class="navbar-item">
+                    <a href="#top" class="navbar-link">Home</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#paket" class="navbar-link">Paket Hotspot</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#keunggulan" class="navbar-link">Keunggulan</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#panduan" class="navbar-link">Cara Pakai</a>
+                </li>
+            </ul>
 
-                <div class="navbar-actions">
- 
-                    <button class="navbar-btn" aria-label="Login" onclick="scrollToTop()">
-                        <ion-icon name="log-in-outline"></ion-icon>
-                    </button>
+            <!-- NAVBAR ACTIONS -->
+            <div class="navbar-actions">
+                <!-- Theme Toggle Button -->
+                <button class="navbar-btn" id="theme-toggle-btn" aria-label="Toggle Theme" onclick="toggleTheme()" title="Ubah Tema">
+                    <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
+                </button>
 
-                    <button class="navbar-btn" id="theme-toggle-btn" aria-label="Toggle Theme" onclick="toggleTheme()">
-                        <ion-icon name="moon-outline" id="theme-icon"></ion-icon>
-                    </button>
- 
-                    <button class="navbar-btn" aria-label="Keranjang" onclick="scrollToPaket()">
-                        <ion-icon name="cart-outline"></ion-icon>
-                    </button>
+                <!-- Tombol Login Voucher (Icon Only) -->
+                <button class="navbar-btn" id="login-voucher-btn" aria-label="Masuk Voucher" onclick="openLoginModal()" title="Masuk Voucher">
+                    <ion-icon name="key-outline"></ion-icon>
+                </button>
 
-                    <button class="btn" onclick="openCSModal('Bantuan CS')">
-                        <ion-icon name="logo-whatsapp"></ion-icon>
-                        <span>Bantuan CS</span>
-                    </button>
-                </div>
-            </nav>
+                <!-- Tombol Bantuan CS WhatsApp -->
+                <button class="btn btn-primary" onclick="openCSModal('Bantuan CS')">
+                    <ion-icon name="logo-whatsapp"></ion-icon>
+                    <span>Bantuan CS</span>
+                </button>
+            </div>
+        </nav>
 
-        </div>
-    </header>
+    </div>
+</header>
 
     <!-- MAIN CONTENT -->
     <main class="container main-content">
@@ -402,10 +405,8 @@
         <div class="container footer-inner">
             <div class="footer-brand">
                 <a href="#top" class="logo">
-                <img src="./assets/images/lg1.png" alt="Kas'Kode Logo">
+                <img src="./assets/images/logo.png" alt="Kas'Kode Logo">
                     <div class="logo-text-wrapper">
-                        <span class="logo-text">Kas'Kode</span>
-                        <span class="logo-slogan">INTERNET UNTUK SEMUA</span>
                     </div>
                 </a>
                 <span>&copy; 2026. All rights reserved.</span>
@@ -439,6 +440,73 @@
                         <span>Lanjut ke WhatsApp Admin</span>
                     </a>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL PANDUAN CARA PAKAI & BELI VOUCHER -->
+    <div class="modal-backdrop hidden" id="panduanModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title-group">
+                    <div class="modal-header-icon">
+                        <ion-icon name="book-outline"></ion-icon>
+                    </div>
+                    <h3>Cara Beli & Pakai Voucher</h3>
+                </div>
+                <button class="modal-close-btn" onclick="closePanduanModal()" aria-label="Tutup Modal">
+                    <ion-icon name="close-outline"></ion-icon>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <p class="modal-desc">Ikuti langkah mudah berikut untuk membeli dan menggunakan voucher Wi-Fi Kas'Kode:</p>
+                
+                <div class="panduan-steps">
+                    <!-- Langkah 1 -->
+                    <div class="step-card">
+                        <div class="step-num">1</div>
+                        <div class="step-info">
+                            <h4>Pilih Paket & Beli Voucher</h4>
+                            <p>Pilih paket internet sesuai kebutuhan Anda di menu <strong>Paket Voucher</strong>, lalu klik tombol <strong>Beli Paket</strong> untuk terhubung ke CS via WhatsApp.</p>
+                        </div>
+                    </div>
+
+                    <!-- Langkah 2 -->
+                    <div class="step-card">
+                        <div class="step-num">2</div>
+                        <div class="step-info">
+                            <h4>Hubungkan ke Wi-Fi Kas'Kode</h4>
+                            <p>Nyalakan Wi-Fi di HP/Laptop Anda, cari dan hubungkan ke SSID/Nama Jaringan <strong>Kas'Kode_Hotspot</strong>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Langkah 3 -->
+                    <div class="step-card">
+                        <div class="step-num">3</div>
+                        <div class="step-info">
+                            <h4>Buka Portal Login & Masukkan Kode</h4>
+                            <p>Halaman login akan muncul otomatis (atau buka browser & ketik <strong>kaskode.net</strong>). Masukkan Kode Voucher yang Anda terima di kolom yang tersedia.</p>
+                        </div>
+                    </div>
+
+                    <!-- Langkah 4 -->
+                    <div class="step-card">
+                        <div class="step-num">4</div>
+                        <div class="step-info">
+                            <h4>Klik Connect & Nikmati Internet</h4>
+                            <p>Klik tombol <strong>Hubungkan / Login</strong>. Selamat! Anda sudah siap berselancar di internet.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" onclick="closePanduanModal()">Tutup</button>
+                <button type="button" class="btn btn-primary" onclick="closePanduanModal(); scrollToPaket();">
+                    <span>Pilih Paket Sekarang</span>
+                    <ion-icon name="arrow-forward-outline"></ion-icon>
+                </button>
             </div>
         </div>
     </div>
