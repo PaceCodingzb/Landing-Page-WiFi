@@ -64,6 +64,60 @@ if (goTopBtn) {
 }
 
 
+/**
+ * dark mode toggle
+ */
+
+const THEME_STORAGE_KEY = 'kaskode-theme';
+const themeIcon = document.getElementById('theme-icon');
+
+// Terapkan tema ke elemen <html> + ganti ikon bulan/matahari
+function applyTheme(theme) {
+  if (theme === 'dark') {
+    document.documentElement.setAttribute('data-theme', 'dark');
+    if (themeIcon) themeIcon.setAttribute('name', 'sunny-outline');
+  } else {
+    document.documentElement.removeAttribute('data-theme');
+    if (themeIcon) themeIcon.setAttribute('name', 'moon-outline');
+  }
+}
+
+// Dipanggil dari tombol di navbar (onclick="toggleTheme()")
+function toggleTheme() {
+  const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+  const newTheme = isDark ? 'light' : 'dark';
+
+  try {
+    localStorage.setItem(THEME_STORAGE_KEY, newTheme);
+  } catch (err) {
+    // localStorage tidak tersedia (mode private/incognito, dll) - lanjut tanpa disimpan
+  }
+
+  applyTheme(newTheme);
+}
+
+// Inisialisasi tema saat halaman dimuat:
+// 1) pakai preferensi tersimpan kalau ada
+// 2) kalau belum pernah diatur, ikuti preferensi sistem (prefers-color-scheme)
+(function initTheme() {
+  let savedTheme = null;
+
+  try {
+    savedTheme = localStorage.getItem(THEME_STORAGE_KEY);
+  } catch (err) {
+    savedTheme = null;
+  }
+
+  if (savedTheme === 'dark' || savedTheme === 'light') {
+    applyTheme(savedTheme);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    applyTheme('dark');
+  } else {
+    applyTheme('light');
+  }
+})();
+
+
 // State Variables
 let isLoggedIn = false;
 let timerInterval = null;
@@ -233,4 +287,3 @@ function scrollToTop() {
     behavior: "smooth"
   });
 }
-
